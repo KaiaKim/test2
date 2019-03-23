@@ -102,38 +102,6 @@ $(document).bind('mousewheel DOMMouseScroll', function(event){
 
 
 // === 4. This is KEYDOWN ANIMATION === //
-// KAIA ORIGINAL:
-// $(document).on("keydown", function(){
-//
-//   var keyCode = KeyboardEvent.charCode;
-//   console.log(keyCode);
-//   //I should get the keyCode but I'm only getting "undefined"
-//
-//
-//   var y = 1;
-//
-//   // left arrow = 37, right arrow = 39
-//
-//   if( keyCode === 37 ) {
-//     // left arrow = move frame backward
-//     y>=1 ? y +=(-1) : y = 12;
-//     // console.log(y);
-//
-//     var transVal = "translate( 0, " + (-400 * y) + "px)";
-//     $("#keydown").css("transform", transVal)
-//
-//   } else if ( keyCode === 39 ) {
-//     //right arrow = move frame forward
-//     y<=11 ? y += 1 : y = 0;
-//
-//     // console.log(y);
-//     var transVal = "translate( 0, " + (-400 * y) + "px)";
-//     $("#keydown").css("transform", transVal)
-//
-//   };
-//
-// });
-// JUSTIN:
 
 // you need an 'event' to listen to, to grab 'which' event happened
 var y = 1;
@@ -169,40 +137,28 @@ $(document).on("keydown", function( event ){
 // === 5. This is INFO === //
 
 $("#hover").hover(function(){
-  $("#info-0").css("display", "none")
-  $("#info-2").css("display", "none")
-  $("#info-3").css("display", "none")
+  $("#info-0").removeClass("show")
+  $("#info-1").addClass("show")
 }, function(){
-  $("#info-0").css("display", "block")
-  $("#info-2").css("display", "block")
-  $("#info-3").css("display", "block")
+  $("#info-0").addClass("show")
+  $("#info-1").removeClass("show")
 });
 
 $("#scroll").hover(function(){
-  $("#info-0").css("display", "none")
-  $("#info-1").css("display", "none")
-  $("#info-3").css("display", "none")
+  $("#info-0").removeClass("show")
+  $("#info-2").addClass("show")
 }, function(){
-  $("#info-0").css("display", "block")
-  $("#info-1").css("display", "block")
-  $("#info-3").css("display", "block")
+  $("#info-0").addClass("show")
+  $("#info-2").removeClass("show")
 });
 
 $("#keydown").hover(function(){
-  $("#info-0").css("display", "none")
-  $("#info-1").css("display", "none")
-  $("#info-2").css("display", "none")
+  $("#info-0").removeClass("show")
+  $("#info-3").addClass("show")
 }, function(){
-  $("#info-0").css("display", "block")
-  $("#info-1").css("display", "block")
-  $("#info-2").css("display", "block")
+  $("#info-0").addClass("show")
+  $("#info-3").removeClass("show")
 });
 
 
-
-
-
-
-
-
-});
+}); //code end
